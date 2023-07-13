@@ -1,0 +1,18 @@
+.panel > .desc > div,
+.panel > .content {
+    border: 1px #000 solid;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 5px;
+}
+
+.panel > .desc {
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+@media screen and (min-width: 600px) {
+    .panel > .desc {
+        max-width: 300px;
+    }
+}

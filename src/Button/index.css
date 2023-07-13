@@ -1,0 +1,8 @@
+button {
+    border: 1px #000 solid;
+    padding: 8px 15px;
+    border-radius: 15px;
+    background-color: unset;
+    font-size: 1.5rem;
+    font-weight: 900;
+}

@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    word-wrap: break-word;
+    overflow-x: hidden;
+}
+
+#app {
+    width: calc(100vw - 20px);
+    min-height: calc(100vh - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+select {
+    max-width: 100%;
+    border: 0;
+    line-height: 40px;
+    border-bottom: 2px #707070 solid;
+    color: #000;
+    background-color: #fff;
+    font-size: 20px;
+    padding: 0 0 2px 15px;
+    margin: 15px 0;
+    width: 100%;
+}

@@ -1,0 +1,38 @@
+.input_fed {
+    position: relative;
+}
+
+label {
+    position: absolute;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 25px;
+    padding: 0 10px;
+    transition: .2s ease-in-out, font-size .2s ease-in-out;
+    font-weight: 200;
+    margin: 15px 0;
+}
+
+.active label {
+    font-size: 15px;
+    transform: translate(-13px, -18px);
+    color: #1077ff;
+}
+
+input {
+    position: relative;
+    width: calc(100% - 30px);
+    border: 0;
+    line-height: 40px;
+    background-color: unset;
+    border-bottom: 2px #707070 solid;
+    font-size: 20px;
+    padding: 2px 15px;
+    margin: 15px 0;
+}
+
+input:active,
+input:focus-visible,
+.active input {
+    outline: none;
+    border-bottom: 2px #1077ff solid;
+}
