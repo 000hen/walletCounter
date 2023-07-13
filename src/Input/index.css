@@ -1,5 +1,6 @@
 .input_fed {
     position: relative;
+    padding: 5px;
 }
 
 label {

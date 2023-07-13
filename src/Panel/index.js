@@ -7,6 +7,8 @@ import AddMoney from "../AddMoney";
 import { getRandomString } from "../utils";
 import Record from "./Record";
 import WalletSelect from "./WalletSelect";
+import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./index.css";
 
@@ -60,7 +62,20 @@ export default () => {
         }}>
             <h1>金額紀錄</h1>
             <div>
-                {moneys.map(e => <Record key={getRandomString(5)} user={e.data.name} amount={e.data.value} id={e.id} />)}
+                {
+                    moneys.length > 0
+                        ? moneys.map(e => <Record key={getRandomString(5)} user={e.data.name} amount={e.data.value} id={e.id} timestamp={e.data.timestamp} />)
+                        : <div style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            height: "100%"
+                        }}>
+                            <h1 style={{
+                                color: "#898989"
+                            }}><FontAwesomeIcon icon={faCircleQuestion} /> 目前沒有紀錄</h1>
+                        </div>
+                }
             </div>
         </div>
     </div>;

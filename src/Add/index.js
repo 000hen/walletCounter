@@ -19,13 +19,13 @@ export default ({ close = () => { } }) => {
         margin: "auto"
     }}>
         <div>
-            <h1><FontAwesomeIcon icon={faWallet} /> 錢包新增</h1>
+            <h1><FontAwesomeIcon icon={faWallet} /> 新增錢包</h1>
             <h3><Input callback={(event) => setWalletTarget(event.target)}>名稱</Input></h3>
         </div>
         <div>
             <Button onClick={() => {
                 if (!walletTarget) return;
-                
+
                 WalletContainer.addWallet(walletTarget.value);
                 walletTarget.value = "";
                 close();

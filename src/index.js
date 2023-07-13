@@ -1,8 +1,10 @@
 import { createRoot } from "react-dom/client";
 import Main from "./Main";
+import ReactModal from "react-modal";
 
 import "./index.css";
-import ReactModal from "react-modal";
+
+console.log("walletCounter By Muisnow");
 
 ReactModal.setAppElement(document.getElementById("modal"));
 createRoot(document.getElementById("app")).render(<Main />);

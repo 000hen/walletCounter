@@ -20,9 +20,9 @@ export default ({ wallet, close = () => { } }) => {
         margin: "auto"
     }}>
         <div>
-            <h1><FontAwesomeIcon icon={faCoins} /> 摳摳新增</h1>
-            <h3><Input callback={(event) => setHuman(event.target)}>人類</Input></h3>
-            <h3><Input type="number" callback={(event) => setCoin(event.target)}>錢錢</Input></h3>
+            <h1><FontAwesomeIcon icon={faCoins} /> 新增紀錄</h1>
+            <h3><Input callback={(event) => setHuman(event.target)}>名稱</Input></h3>
+            <h3><Input type="number" callback={(event) => setCoin(event.target)}>金額</Input></h3>
         </div>
         <div>
             <Button onClick={() => {
