@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import WalletContainer from "../WalletContainer";
 import NoWallet from "../NoWallet";
 import Panel from "../Panel";
+import Setting from "../Setting";
+import ApiInitalizer from "../API/Initalizer";
 
 export default () => {
     const [walletLength, setWalletLength] = useState(WalletContainer.walletLength);
@@ -20,7 +22,14 @@ export default () => {
         }
     }, []);
 
-    return walletLength < 1
-        ? <NoWallet />
-        : <Panel />;
+    return <>
+        <ApiInitalizer />
+
+        <Setting />
+        {
+            walletLength < 1
+                ? <NoWallet />
+                : <Panel />
+        }
+    </>;
 }
