@@ -1,22 +1,20 @@
+import { useEffect, useState } from "react";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import SyncButton from "../SyncButton";
 import GoogleAPI from "../../../../API/Google";
-import { useEffect, useState } from "react";
 
 export default () => {
-    const [isLogined, setIsLogined] = useState(false);
-    const [isAvailable, setIsAvailable] = useState(false);
+    const [isLogined, setIsLogined] = useState(GoogleAPI.isLogined);
+    const [isAvailable, setIsAvailable] = useState(GoogleAPI.isInited);
 
     useEffect(() => {
-        if (GoogleAPI.isInited) setIsAvailable(true);
-        if (GoogleAPI.isLogined) setIsLogined(true);
-
         function initHandleEvent() {
             if (GoogleAPI.isInited) setIsAvailable(true);
         }
 
         function loginHandleEvent() {
-            if (GoogleAPI.isLogined) setIsLogined(true);
+            if (GoogleAPI.isLogined) return;
+            setIsLogined(true);
         }
         
         GoogleAPI.event.addListener("inited", initHandleEvent);
@@ -32,5 +30,6 @@ export default () => {
         ? null
         : <SyncButton icon={faGoogle} onClick={() => {
             GoogleAPI.showLogin();
+            // TODO: complete the upload function
         }} isDisable={isLogined}>Google</SyncButton>;
 }

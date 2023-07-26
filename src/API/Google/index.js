@@ -113,7 +113,7 @@ class GoogleAPI {
         return new Promise((res) => {
             gapi.client.drive.files.list({
                 spaces: 'appDataFolder',
-                fields: 'nextPageToken, files(id, name, size)',
+                fields: 'nextPageToken, files(id, name, size, md5Checksum)',
                 pageSize: 100
             }).execute(res);
         });
@@ -149,10 +149,6 @@ class GoogleAPI {
 
         return new Promise((res) => {
             // https://stackoverflow.com/a/35182924/15666878
-
-            // const boundary = getRandomString(15);
-            // const delimiter = "\r\n--" + boundary + "\r\n";
-            // const close_delim = "\r\n--" + boundary + "--";
 
             let metadata = {
                 name: filename,

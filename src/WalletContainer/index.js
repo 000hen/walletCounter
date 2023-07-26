@@ -1,5 +1,8 @@
 import EventEmitter from "events";
+import packageJson from "../../package.json";
 import { DATABASE_NAME, readData, writeData } from "../utils";
+
+const WALLET_VERSION = "v1";
 
 class WalletContainer {
     #wallet = readData(DATABASE_NAME);
@@ -24,6 +27,15 @@ class WalletContainer {
 
     get moneyList() {
         return this.#wallet.moneys;
+    }
+
+    get exportData() {
+        return JSON.stringify({
+            walletVer: WALLET_VERSION,
+            applicationVer: packageJson.version,
+            fulVer: [packageJson.version, WALLET_VERSION].join('.'),
+            database: this.#wallet
+        })
     }
 
     #saveWallet(value) {
